@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organization Hierarchy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #2c3338;
+    color: #fff;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-top: 2px solid #c0392b;
+    padding-top: 20px;
+  }
+  .header h1 {
+    display: inline-block;
+    background: #fff;
+    color: #c0392b;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .org-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .level {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+    width: 100%;
+  }
+  .level::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    width: 2px;
+    height: 30px;
+    background: #c0392b;
+    left: 50%;
+  }
+  .level:last-child::after { display: none; }
+  .card {
+    background: #fff;
+    color: #2c3338;
+    border-radius: 50px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    min-width: 280px;
+    max-width: 320px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(192,57,43,0.4);
+    border-color: #c0392b;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #c0392b;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #f5f5f5;
+  }
+  .info { flex: 1; }
+  .info .name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c3338;
+    margin-bottom: 2px;
+  }
+  .info .position {
+    font-size: 12px;
+    color: #c0392b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .level-label {
+    color: #888;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    .card { min-width: 240px; }
+    .level { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ORGANIZATION HIERARCHY</h1>
+</div>
+
+<div class="org-tree">
+
+  <!-- LEVEL 1 -->
+  <div class="level">
+    <div class="level-label">Top Leadership</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Mohammed+Rafiujjaman+Sumon&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Mohammed Rafiujjaman Sumon</div>
+        <div class="position">Founder & Chairman</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 2 -->
+  <div class="level">
+    <div class="level-label">Board</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Abdul+Karim&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Abdul Karim</div>
+        <div class="position">Vice Chairman</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Rashidul+Islam&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Rashidul Islam</div>
+        <div class="position">Board of Directors</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 3 -->
+  <div class="level">
+    <div class="level-label">Executive Leadership</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Tanvir+Ahmed&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Tanvir Ahmed</div>
+        <div class="position">Chief Executive Officer (CEO)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Shahriar+Hossain&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Shahriar Hossain</div>
+        <div class="position">Managing Director (MD)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Imran+Khan&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Imran Khan</div>
+        <div class="position">Deputy Managing Director</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 4 -->
+  <div class="level">
+    <div class="level-label">C-Suite</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Mahmudul+Hasan&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Mahmudul Hasan</div>
+        <div class="position">Chief Financial Officer (CFO)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Nasir+Uddin&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Nasir Uddin</div>
+        <div class="position">Chief Operating Officer (COO)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Sadia+Rahman&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Sadia Rahman</div>
+        <div class="position">Chief Technology Officer (CTO)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Farhan+Chowdhury&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Farhan Chowdhury</div>
+        <div class="position">Chief Marketing Officer (CMO)</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Tahmina+Akter&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Tahmina Akter</div>
+        <div class="position">Chief HR Officer (CHRO)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 5 -->
+  <div class="level">
+    <div class="level-label">Group Heads</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Ariful+Haque&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Ariful Haque</div>
+        <div class="position">Group Director — Group of Companies</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Kamrul+Islam&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Kamrul Islam</div>
+        <div class="position">Director of Business Development</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Rezaul+Karim&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Rezaul Karim</div>
+        <div class="position">Director of Operations</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 6 -->
+  <div class="level">
+    <div class="level-label">Department Heads</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Sharmin+Sultana&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Sharmin Sultana</div>
+        <div class="position">Head of Finance & Accounts</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Asaduzzaman+Noor&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Asaduzzaman Noor</div>
+        <div class="position">Head of Sales & Marketing</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Mahir+Rahman&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Mahir Rahman</div>
+        <div class="position">Head of IT & Engineering</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Nusrat+Jahan&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Nusrat Jahan</div>
+        <div class="position">Head of Human Resources</div>
+      </div>
+    </div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Salman+Hossain&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Salman Hossain</div>
+        <div class="position">Head of Legal & Compliance</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 7 -->
+  <div class="level">
+    <div class="level-label">Support</div>
+    <div class="card">
+      <img class="avatar" src="https://ui-avatars.com/api/?name=Anika+Tabassum&background=c0392b&color=fff&size=120" alt="">
+      <div class="info">
+        <div class="name">Anika Tabassum</div>
+        <div class="position">Company Secretary</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
